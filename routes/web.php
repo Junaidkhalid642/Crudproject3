@@ -15,16 +15,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login','Auth\LoginController@getLogin');
-Route::get('/register','Auth\RegisterController@getRegister');
+Route::get('/login','App\Http\Controllers\Auth\LoginController@getLogin');
+Route::get('/register','App\Http\Controllers\Auth\RegisterController@getRegister');
 
-Route::post('/register','Auth\RegisterController@postRegister');
-Route::post('/login','Auth\LoginController@postLogin');
+Route::post('/register','\App\Http\Controllers\Auth\RegisterController@postRegister');
+Route::post('/login','App\Http\Controllers\Auth\LoginController@postLogin');
 
 Route::group(['middleware' => 'userAuth'], function () {
-    Route::get('/home', 'HomeController@home');
-    Route::get('/edit/{id}', 'UserController@edit');
-    Route::get('/delete/{id}', 'UserController@delete');
-    Route::post('/update', 'UserController@update');
-    Route::get('/logout', 'Auth\LoginController@logoutUser');
+	//Route::get('/home','App\Http\Controllers\HomeController@gethome');
+  Route::get('/home', 'HomeController@gethome');
+		Route::get('edit/{id}','App\Http\Controllers\UserController@getedit');
+   // Route::get('/edit/{id}', 'UserController@edit');
+  //  Route::get('/delete/{id}', 'UserController@delete');
+		Route::get('delete/{id}','App\Http\Controllers\UserController@getdelete');
+
+    //Route::post('/update', 'UserController@update');
+		Route::get('update/{id}','App\Http\Controllers\UserController@getupdate');
+
+Route::get('/logout','App\Http\Controllers\Auth\LoginController@getuser');
+   // Route::get('/logout', 'Auth\LoginController@logoutUser');
 });

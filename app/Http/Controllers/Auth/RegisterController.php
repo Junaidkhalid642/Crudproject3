@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Requests\RegisterRequest;
-use App\User;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -13,7 +13,7 @@ class RegisterController extends Controller
 
 
     public function getRegister(){
-        return view('register');
+        return view('auth.register');
     }
 
     public function postRegister(RegisterRequest $request){
