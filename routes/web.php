@@ -22,16 +22,20 @@ Route::post('/register','\App\Http\Controllers\Auth\RegisterController@postRegis
 Route::post('/login','App\Http\Controllers\Auth\LoginController@postLogin');
 
 Route::group(['middleware' => 'userAuth'], function () {
-	//Route::get('/home','App\Http\Controllers\HomeController@gethome');
-  Route::get('/home', 'HomeController@gethome');
+
+	Route::get('/home', 'App\Http\Controllers\HomeController@home');
+	//Route::get('/home', 'App\Http\Controllers\HomeController@getindex');
+
+	//Route::get('users','App\Http\Controllers\UserController@getindex');
+
 		Route::get('edit/{id}','App\Http\Controllers\UserController@getedit');
-   // Route::get('/edit/{id}', 'UserController@edit');
-  //  Route::get('/delete/{id}', 'UserController@delete');
+
 		Route::get('delete/{id}','App\Http\Controllers\UserController@getdelete');
 
-    //Route::post('/update', 'UserController@update');
-		Route::get('update/{id}','App\Http\Controllers\UserController@getupdate');
+		Route::post('/update','App\Http\Controllers\UserController@update');
 
-Route::get('/logout','App\Http\Controllers\Auth\LoginController@getuser');
-   // Route::get('/logout', 'Auth\LoginController@logoutUser');
+
+Route::get('/logout','App\Http\Controllers\Auth\LoginController@logoutuser');
+
 });
+

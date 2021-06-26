@@ -56,11 +56,14 @@
         </form>
 
         <a href="{{url('register')}}">Click here to register</a>
+        
 
     </div>
     <!-- /.login-box-body -->
     </div>
     <!-- /.login-box -->
     </body>
+    
+</body>
     </html>
 @stop
