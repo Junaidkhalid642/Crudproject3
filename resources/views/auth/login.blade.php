@@ -54,7 +54,15 @@
                 <!-- /.col -->
             </div>
         </form>
-
+<div class="form-group has-feedback">
+                              <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                                  <div class="checkbox">
+                                      <label>
+                                          <a href="{{url('forget-password')}}">Reset Password</a>
+                                      </label>
+                                  </div>
+                              </div>
+                          </div>
         <a href="{{url('register')}}">Click here to register</a>
         
 

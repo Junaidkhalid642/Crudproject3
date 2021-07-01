@@ -40,6 +40,7 @@
             {{csrf_field()}}
             <div class="form-group has-feedback">
                 <input type="text" name="name" class="form-control" placeholder="Name" value="{{old('name')}}">
+                <br>
                 <input type="email" name="email" class="form-control" placeholder="Email"  value="{{old('email')}}">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>

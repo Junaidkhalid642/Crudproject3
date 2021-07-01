@@ -10,12 +10,5 @@ class HomeController extends Controller
        $users = User::select('id','name','email')->get();
        return view('home',['users'=>$users]);
    }
-   //public function getindex()
-   // {
-     //   return view('home', [
-       //     'users' => DB::table('users')->paginate(2)
-       // ]//);
-   // }
-
-
+      
 }

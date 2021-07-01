@@ -38,12 +38,15 @@
     @endif
     </tbody>
 </table>
+{!! $users->links('pagination') !!}
 </div>
-<!-- /.login-box-body -->
 </div>
-<!-- /.login-box -->
+
+
 </body>
+
 <script>
+
     $(document).on('click', '.delete', function (e) {
         var confirmed = confirm("Are you sure you want to delete this record ?");
         if (!confirmed)
@@ -52,5 +55,6 @@
         }
 
     });
+
     </script>
 </html>
